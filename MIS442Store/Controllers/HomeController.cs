@@ -7,9 +7,10 @@ using System.Web.Mvc;
 namespace MIS442Store.Controllers
 {
     public class HomeController : Controller
-    {
+    { 
         public ActionResult Index()
         {
+            
             return View();
         }
 
