@@ -10,7 +10,6 @@ namespace MIS442Store.Controllers
     { 
         public ActionResult Index()
         {
-            
             return View();
         }
 
