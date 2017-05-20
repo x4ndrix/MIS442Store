@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MIS442Store.Models;
 
+
 namespace MIS442Store.Controllers
 {
     [Authorize]

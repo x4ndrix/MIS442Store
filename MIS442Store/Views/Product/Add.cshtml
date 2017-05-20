@@ -1,17 +1,31 @@
-﻿
+﻿u
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
+@using MIS442Store.DataLayer.DataModels
+\Views\Product\Add.cshtml
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Add</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+@model Product
+
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.ProductID)
+    @Html.TextBoxFor(m => m.ProductID)
+
+    @Html.LabelFor(m => m.ProductCode)
+    @Html.TextBoxFor(m => m.ProductCode)
+
+    @Html.LabelFor(m => m.ProductName)
+    @Html.TextBoxFor(m => m.ProductName)
+
+    @Html.LabelFor(m => m.ProductVersion)
+    @Html.TextBoxFor(m => m.ProductVersion)
+
+    @Html.LabelFor(m => m.ProductReleaseDate)
+    @Html.TextBoxFor(m => m.ProductReleaseDate)
+
+    <button type="submit">Submit</button>
+}

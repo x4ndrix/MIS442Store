@@ -1,17 +1,28 @@
-﻿
-@{
-    Layout = null;
+﻿@using MIS442Store.DataLayer.DataModels
+
+@model Product
+
+
+@using (Html.BeginForm())
+
+{
+
+   
+    @Html.HiddenFor(m => m.ProductID)
+
+
+    @Html.LabelFor(m => m.ProductCode)
+    @Html.TextBoxFor(m => m.ProductCode)
+
+    @Html.LabelFor(m => m.ProductName)
+    @Html.TextBoxFor(m => m.ProductName)
+
+    @Html.LabelFor(m => m.ProductVersion)
+    @Html.TextBoxFor(m => m.ProductVersion)
+
+    @Html.LabelFor(m => m.ProductReleaseDate)
+    @Html.TextBoxFor(m => m.ProductReleaseDate)
+
+    <button type="submit">Submit</button>
+
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>

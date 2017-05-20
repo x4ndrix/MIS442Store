@@ -1,4 +1,4 @@
-USE [DB_MIS442];
+USE [MIS442_TMason];
 GO
 
 CREATE TABLE [dbo].[Product](

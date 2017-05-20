@@ -1,0 +1,46 @@
+﻿
+
+
+<!DOCTYPE html>
+
+@using MIS442Store.DataLayer.DataModels
+\Views\Registration\Index.cshtml
+
+@model List<Registration>
+@Html.ActionLink("View Registrations", "AddRegistration", "Registration")
+<table>
+    <thead>
+        <tr>
+            <th>RegistrationID</th>
+            <th>Registration Date</th>
+            <th>Registration ProductID</th>
+            <th>Registration SerialNumber</th>
+            <th>Registration Verified</th>
+            <th>Registration User Name</th>
+            <th>Registration Address</th>
+            <th>Registration State</th>
+            <th>Registration City</th>
+            <th>Registration Zip</th>
+            <th>Registration Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Registration reg in Registration)
+        {
+            <tr>
+                <td>@reg.RegistrationID</td>
+                <td>@reg.RegistrationDate</td>
+                <td>@reg.RegistrationProductID</td>
+                <td>@reg.RegistrationSerialNumber</td>
+                <td>@reg.RegistrationVerified</td>
+                <td>@reg.RegistrationUserName</td>
+                <td>@reg.RegistrationAddress</td>
+                <td>@reg.RegistrationState</td>
+                <td>@reg.RegistrationCity</td>
+                <td>@reg.RegistrationZip</td>
+                <td>@reg.RegistrationPhone</td>
+                <td>@Html.ActionLink("", "", "", new { @id = reg.RegistrationID }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>

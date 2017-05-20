@@ -1,0 +1,30 @@
+﻿
+
+<!DOCTYPE html>
+@using MIS442Store.DataLayer.DataModels
+\Views\Registration\AddRegistration.cshtml
+@model RegistrationModel
+
+@Html.DropDownListFor(m => m.RegistrationState, new SelectList(Model.States, "code", "name"))
+@*
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m => m.RegistrationID)
+            @Html.TextBoxFor(m => m.RegistrationID)
+
+            @Html.LabelFor(m => m.)
+            @Html.TextBoxFor(m => m.)
+
+            @Html.LabelFor(m => m.)
+            @Html.TextBoxFor(m => m.)
+
+            @Html.LabelFor(m => m.)
+            @Html.TextBoxFor(m => m.)
+
+            @Html.LabelFor(m => m.)
+            @Html.TextBoxFor(m => m.)
+
+            <button type="submit">Submit</button>
+
+    }
+*@
