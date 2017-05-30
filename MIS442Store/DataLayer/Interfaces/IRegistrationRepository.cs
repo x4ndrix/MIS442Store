@@ -17,5 +17,6 @@ namespace MIS442Store.DataLayer.Interfaces
         List<Registration> GetRegistrations();
         Registration GetRegistration(int id);
         void SaveRegistration(Registration registration);
+        //void SaveRegistration(DataModels.RegistrationModel regModel);
     }
 }

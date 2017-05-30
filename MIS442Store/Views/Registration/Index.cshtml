@@ -1,10 +1,11 @@
 ﻿
+@{
+    Layout = "~/Views/Shared/MISLayout.cshtml";
+}
 
-
-<!DOCTYPE html>
 
 @using MIS442Store.DataLayer.DataModels
-\Views\Registration\Index.cshtml
+
 
 @model List<Registration>
 @Html.ActionLink("View Registrations", "AddRegistration", "Registration")
@@ -25,10 +26,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (Registration reg in Registration)
+        @foreach (Registration reg in Model)
         {
             <tr>
-                <td>@reg.RegistrationID</td>
+                
                 <td>@reg.RegistrationDate</td>
                 <td>@reg.RegistrationProductID</td>
                 <td>@reg.RegistrationSerialNumber</td>

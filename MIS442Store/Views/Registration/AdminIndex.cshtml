@@ -1,13 +1,17 @@
 ﻿
 
+@{
+    Layout = "~/Views/Shared/MISLayout.cshtml";
+}
+
 
 <!DOCTYPE html>
 
 @using MIS442Store.DataLayer.DataModels
-\Views\Registration\AdminIndex.cshtml
+
 
 @model List<Registration>
-@Html.ActionLink("View Registrations","AddRegistration","Registration")
+@Html.ActionLink("View Registrations","AdminIndex","Registration")
 <table>
     <thead>
         <tr>
@@ -22,10 +26,11 @@
             <th>Registration City</th>
             <th>Registration Zip</th>
             <th>Registration Phone</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach(Registration reg in Registration)
+        @foreach (Registration reg in Model)
         {
             <tr>
                 <td>@reg.RegistrationID</td>
@@ -39,7 +44,7 @@
                 <td>@reg.RegistrationCity</td>
                 <td>@reg.RegistrationZip</td>
                 <td>@reg.RegistrationPhone</td>
-                <td>@Html.ActionLink("","","",new { @id=reg.RegistrationID},null)</td>
+                <td>@Html.ActionLink("View Registrations","Admin Index","Registration",new { @id=reg.RegistrationID},null)</td>
             </tr>
         }
     </tbody>

@@ -12,18 +12,16 @@ namespace MIS442Store.Controllers
     [Authorize]
     public class RegistrationController : Controller
     {
-        // GET: Registration
-        /**public ActionResult Index()
-        {
-            return View();
-        }**/
+        
 
         private IRegistrationRepository _repo;
+        private IStateRepository _staterepo;
 
         public RegistrationController()
         {
-            //Create new product repository
+            //Create new regisration and state repository
             _repo = new RegistrationRepository();
+            _staterepo = new StateRepository();
         }
 
         // GET: Product
@@ -37,19 +35,23 @@ namespace MIS442Store.Controllers
         [HttpGet]
         public ActionResult AddRegistration()
         {
+            RegistrationModel regModel = new RegistrationModel();
+
+            regModel.States = _staterepo.GetStates();
             //Return the add view when requested
-            return View(new Registration());
+            return View(regModel);
+
         }
 
         [HttpPost]
-        public ActionResult AddRegistration(Registration registration)
+        public ActionResult AddRegistration(Registration reg)
         {
             if (!ModelState.IsValid)
             {
-                return View(registration);
+                return View(reg);
             }
             //Save product to repo
-            _repo.SaveRegistration(registration);
+            _repo.SaveRegistration(reg);
             return RedirectToAction("Index");
         }
 

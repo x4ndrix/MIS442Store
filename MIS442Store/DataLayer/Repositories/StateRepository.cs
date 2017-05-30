@@ -12,21 +12,10 @@ namespace MIS442Store.DataLayer.Repositories
     public class StateRepository : IStateRepository
     {
         
-        //Private member variable of type INewsRepository
-        private IStateRepository staterepository;
-
-        //Constructor
-        public StateRepository()
-        {
-            staterepository = new StateRepository();
-        }
+        
 
 
-        public USState Get(string name)
-        {
-            USState state = new USState();
-            return state;
-        }
+        
 
         public List<USState> GetStates()
         {
@@ -34,18 +23,6 @@ namespace MIS442Store.DataLayer.Repositories
 
 
 
-            using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DB_MIS442"].ConnectionString))
-            {
-                //Open the connection
-                connection.Open();
-
-                return stateList;
-            }
-        }
-
-        public void Save(USState state)
-        {
-            //New connection to sql server database initialized.
             using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DB_MIS442"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
@@ -59,45 +36,19 @@ namespace MIS442Store.DataLayer.Repositories
                     {
                         while (reader.Read())
                         {
-
-                            //Add news to the list
-                            command.ExecuteNonQuery();
-
+                            USState state = new USState();
+                            state.code = reader["Code"].ToString();
+                            state.name = reader["Name"].ToString();
+                            stateList.Add(state);
                         }
                     }
+                   
                 }
+               
             }
-
-
-            //Perform insert if true that there are no items in the list of news items
-            if (state.name == "")
-            {
-                using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DB_MIS442"].ConnectionString))
-                {
-                    using (SqlCommand command = new SqlCommand())
-                    {
-                        command.Connection = connection;
-                        command.CommandText = "SELECT * FROM State";
-                        command.CommandType = System.Data.CommandType.Text;
-
-                        connection.Open();
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-                            }
-                        }
-                    }
-                }
-            }
-
-
-            //Perform update since we have news items
-            else
-            {
-                //Read from table 
-            }
+            return stateList;
         }
+
+       
     }
 }

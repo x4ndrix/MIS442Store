@@ -14,14 +14,14 @@ namespace MIS442Store.DataLayer.Repositories
     {
         
             //Private member variable of type INewsRepository
-            private IRegistrationRepository registrationrepository;
-
+            //private IRegistrationRepository registrationrepository;
+        /*
             //Constructor
             public RegistrationRepository()
             {
                 registrationrepository = new RegistrationRepository();
             }
-
+            */
 
         public Registration GetRegistration(int id)
         {

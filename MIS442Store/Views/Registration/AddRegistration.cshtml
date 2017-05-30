@@ -1,30 +1,50 @@
 ﻿
+@{
+    Layout = "~/Views/Shared/MISLayout.cshtml";
+}
+
 
 <!DOCTYPE html>
 @using MIS442Store.DataLayer.DataModels
-\Views\Registration\AddRegistration.cshtml
+
 @model RegistrationModel
 
 @Html.DropDownListFor(m => m.RegistrationState, new SelectList(Model.States, "code", "name"))
-@*
+
         @using (Html.BeginForm())
         {
-            @Html.LabelFor(m => m.RegistrationID)
-            @Html.TextBoxFor(m => m.RegistrationID)
+            @Html.LabelFor(m => m.RegistrationProductID)
+            @Html.TextBoxFor(m => m.RegistrationProductID)
 
-            @Html.LabelFor(m => m.)
-            @Html.TextBoxFor(m => m.)
+            @Html.LabelFor(m => m.RegistrationDate)
+            @Html.TextBoxFor(m => m.RegistrationDate)
 
-            @Html.LabelFor(m => m.)
-            @Html.TextBoxFor(m => m.)
+            @Html.LabelFor(m => m.RegistrationSerialNumber)
+            @Html.TextBoxFor(m => m.RegistrationSerialNumber)
 
-            @Html.LabelFor(m => m.)
-            @Html.TextBoxFor(m => m.)
+            @Html.LabelFor(m => m.RegistrationVerified)
+            @Html.TextBoxFor(m => m.RegistrationVerified)
 
-            @Html.LabelFor(m => m.)
-            @Html.TextBoxFor(m => m.)
+            @Html.LabelFor(m => m.RegistrationUserName)
+            @Html.TextBoxFor(m => m.RegistrationUserName)
+
+            @Html.LabelFor(m => m.RegistrationAddress)
+            @Html.TextBoxFor(m => m.RegistrationAddress)
+
+            @Html.LabelFor(m => m.RegistrationState)
+            @Html.TextBoxFor(m => m.RegistrationState)
+
+            @Html.LabelFor(m => m.RegistrationCity)
+            @Html.TextBoxFor(m => m.RegistrationCity)
+
+            @Html.LabelFor(m => m.RegistrationZip)
+            @Html.TextBoxFor(m => m.RegistrationZip)
+
+            @Html.LabelFor(m => m.RegistrationPhone)
+            @Html.TextBoxFor(m => m.RegistrationPhone)
+
+         
 
             <button type="submit">Submit</button>
 
     }
-*@
