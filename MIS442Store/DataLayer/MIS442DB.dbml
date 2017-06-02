@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MIS442_TMason" Class="MIS442DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=turnsol.arvixe.com;Initial Catalog=MIS442_TMason;User ID=TMason" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MIS442_TMasonConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Product" Member="ProductDOs">
+    <Type Name="ProductDO" Id="ID1">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductVersion" Type="System.Decimal" DbType="Decimal(5,1) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductReleaseDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="TMason.Product_Get" Method="Product_Get">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="TMason.Product_GetList" Method="Product_GetList">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="TMason.Product_InsertUpdate" Method="Product_InsertUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Code" Parameter="code" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Version" Parameter="version" Type="System.Decimal" DbType="Decimal(6,2)" />
+    <Parameter Name="ReleaseDate" Parameter="releaseDate" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

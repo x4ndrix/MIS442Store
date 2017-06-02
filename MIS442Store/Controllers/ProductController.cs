@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MIS442Store.DataLayer.DataModels;
 using MIS442Store.DataLayer.Interfaces;
 using MIS442Store.DataLayer.Repositories;
+using System.Data.Linq;
 
 namespace MIS442Store.Controllers
 {
@@ -18,7 +19,10 @@ namespace MIS442Store.Controllers
         public ProductController()
         {
             //Create new product repository
-            _repo = new ProductRepository();
+            //_repo = new ProductRepository();
+
+            //Create new LINQProductRepository object
+            _repo = new LINQProductRepository();
         }
 
         // GET: Product
@@ -69,6 +73,13 @@ namespace MIS442Store.Controllers
             return View(prod);
         }
         
+        [OutputCache(Duration = 500, VaryByParam ="id")]
+        public ActionResult ViewProduct(int id)
+        {
+            
+
+            return View("ViewProduct");
+        }
 
     }
 }
